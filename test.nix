@@ -50,11 +50,11 @@ in
         client.wait_for_window("Firefox")
         client.sleep(5)
         client.succeed("xdotool key ctrl+q")
-        client.sleep(1)
+        client.sleep(5)
         screen_content = client.get_screen_text()
         assert "Quit Firefox" in screen_content, "Firefox asks for confirmation"
         client.succeed("xdotool key space")
-        client.sleep(1)
+        client.sleep(5)
 
       with subtest("open website on server"):
         client.succeed("xterm -e '${firefox} http://server' >&2 &")
@@ -64,7 +64,6 @@ in
         client.screenshot("it-works")
 
         screen_content = client.get_screen_text()
-        print(screen_content)
         assert "It works!" in screen_content, "It works! page is on screen"
     '';
 }
