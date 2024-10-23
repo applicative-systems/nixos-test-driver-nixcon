@@ -30,6 +30,16 @@ in
     };
   };
 
+  interactive.nodes = {
+    server = {
+      virtualisation.forwardPorts = [
+        { from = "host"; host.port = 8000; guest.port = 80; }
+      ];
+    };
+
+    client = import ../debug-host-module.nix;
+  };
+
   testScript = { nodes, ... }:
     let
       firefox = lib.getExe nodes.client.programs.firefox.package;
