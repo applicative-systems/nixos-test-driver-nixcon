@@ -1,5 +1,5 @@
 {
-  description = "NixOS Integration Test Driver Demo for Nixcon 2024";
+  description = "NixOS Integration Test Driver Demo for Nixcon";
 
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";

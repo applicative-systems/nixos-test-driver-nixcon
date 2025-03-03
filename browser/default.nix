@@ -3,7 +3,7 @@ let
   nixpkgs = pkgs.path;
 in
 {
-  name = "nixcon24-demo-test";
+  name = "nixcon-browser-test";
   globalTimeout = 100;
 
   enableOCR = true;
