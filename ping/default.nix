@@ -11,6 +11,9 @@
   interactive.nodes.machine1 = import ../debug-host-module.nix;
 
   testScript = ''
+    machine1.systemctl("start network-online.target")
+    machine2.systemctl("start network-online.target")
+
     machine1.wait_for_unit("network-online.target")
     machine2.wait_for_unit("network-online.target")
 

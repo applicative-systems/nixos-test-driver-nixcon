@@ -29,6 +29,7 @@
     server.wait_for_unit("echo.service")
     server.wait_for_open_port(ECHO_PORT)
 
+    client.systemctl("start network-online.target")
     client.wait_for_unit("network-online.target")
     output = client.succeed(f"echo '{ECHO_TEXT}' | nc -N server {ECHO_PORT}")
     assert ECHO_TEXT in output

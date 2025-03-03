@@ -17,7 +17,6 @@ in
     server = {
       services.httpd.enable = true;
       networking.firewall.allowedTCPPorts = [ 80 ];
-
     };
     client = {
       imports = [ (nixpkgs + "/nixos/tests/common/x11.nix") ];
@@ -48,6 +47,7 @@ in
       start_all()
 
       for m in [ client, server ]:
+        m.systemctl("start network-online.target")
         m.wait_for_unit("network-online.target")
 
       server.succeed("ping -c 1 client")

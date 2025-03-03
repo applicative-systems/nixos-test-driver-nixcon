@@ -18,7 +18,12 @@
         browser = pkgs.testers.runNixOSTest ./browser;
       };
 
-      checks = config.packages;
+      checks = config.packages // {
+        # let `nix flake check` fill up the nix store with these
+        ping = config.packages.ping.driverInteractive;
+        echo = config.packages.echo.driverInteractive;
+        browser = config.packages.browser.driverInteractive;
+      };
 
       _module.args.pkgs = import inputs.nixpkgs {
         inherit system;
