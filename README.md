@@ -3,8 +3,7 @@
 
 Advanced Techniques for Multi-VM Scenarios and Flake-Free Testing
 
-This talk was held on Nixcon 2024 in Berlin.
-There was no recording.
+This talk was held on Planet Nix 2025 in Pasadena, CA.
 
 ![Slide 1](./slides/1.png)
 ![Slide 2](./slides/2.png)
