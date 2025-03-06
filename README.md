@@ -23,3 +23,4 @@ This talk was held on Planet Nix 2025 in Pasadena, CA.
 ![Slide 16](./slides/16.png)
 ![Slide 17](./slides/17.png)
 ![Slide 18](./slides/18.png)
+![Slide 19](./slides/19.png)
