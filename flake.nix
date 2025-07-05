@@ -20,9 +20,9 @@
 
       checks = config.packages // {
         # let `nix flake check` fill up the nix store with these
-        ping = config.packages.ping.driverInteractive;
-        echo = config.packages.echo.driverInteractive;
-        browser = config.packages.browser.driverInteractive;
+        ping-interactive = config.packages.ping.driverInteractive;
+        echo-interactive = config.packages.echo.driverInteractive;
+        browser-interactive = config.packages.browser.driverInteractive;
       };
 
       _module.args.pkgs = import inputs.nixpkgs {
