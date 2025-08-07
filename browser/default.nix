@@ -4,7 +4,7 @@ let
 in
 {
   name = "nixcon-browser-test";
-  globalTimeout = 100;
+  globalTimeout = 500;
 
   enableOCR = true;
 

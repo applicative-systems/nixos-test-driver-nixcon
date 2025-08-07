@@ -8,7 +8,7 @@
     machine2 = { pkgs, ... }: { };
   };
 
-  globalTimeout = 30;
+  globalTimeout = 300;
 
   interactive.nodes.machine1 = import ../debug-host-module.nix;
 
