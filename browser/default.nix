@@ -10,7 +10,10 @@ in
 
   defaults = {
     networking.firewall.enable = false;
-    virtualisation.resolution = { x = 800; y = 600; };
+    virtualisation.resolution = {
+      x = 800;
+      y = 600;
+    };
   };
 
   nodes = {
@@ -32,14 +35,19 @@ in
   interactive.nodes = {
     server = {
       virtualisation.forwardPorts = [
-        { from = "host"; host.port = 8000; guest.port = 80; }
+        {
+          from = "host";
+          host.port = 8000;
+          guest.port = 80;
+        }
       ];
     };
 
     client = import ../debug-host-module.nix;
   };
 
-  testScript = { nodes, ... }:
+  testScript =
+    { nodes, ... }:
     let
       firefox = lib.getExe nodes.client.programs.firefox.package;
     in

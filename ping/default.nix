@@ -2,10 +2,10 @@
   name = "An awesome test.";
 
   nodes = {
-    machine1 = { pkgs, ... }: {
+    machine1 = {
       # Empty config sets some defaults
     };
-    machine2 = { pkgs, ... }: { };
+    machine2 = { };
   };
 
   globalTimeout = 300;
