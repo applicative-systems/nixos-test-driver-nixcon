@@ -60,9 +60,7 @@ in
         client.wait_for_window("Firefox")
         client.sleep(5)
         client.succeed("xdotool key ctrl+q")
-        client.sleep(5)
-        screen_content = client.get_screen_text()
-        assert "Quit Firefox" in screen_content, "Firefox asks for confirmation"
+        client.wait_for_text(".uit .irefox")
         client.succeed("xdotool key space")
         client.sleep(5)
 
