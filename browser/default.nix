@@ -21,7 +21,7 @@ in
       services.httpd.enable = true;
       networking.firewall.allowedTCPPorts = [ 80 ];
     };
-    client = {
+    client = { pkgs, ... }: {
       imports = [ (nixpkgs + "/nixos/tests/common/x11.nix") ];
 
       programs.firefox.enable = true;
